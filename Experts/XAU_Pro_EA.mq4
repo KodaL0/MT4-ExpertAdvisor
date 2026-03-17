@@ -16,6 +16,7 @@
 #include <XAUPro/DailyGuard.mqh>
 #include <XAUPro/StatusPanel.mqh>
 #include <XAUPro/TradeJournal.mqh>
+#include <XAUPro/RegimeFilter.mqh>
 
 datetime g_lastBarTime = 0;
 SignalResult g_lastSignal;

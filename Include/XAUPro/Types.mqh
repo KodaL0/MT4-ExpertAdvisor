@@ -8,6 +8,15 @@ enum TradeDirection
    DIR_SELL = -1
 };
 
+enum MarketRegime
+{
+   REGIME_UNKNOWN = 0,
+   REGIME_TRENDING = 1,
+   REGIME_RANGING = 2,
+   REGIME_CHAOTIC = 3,
+   REGIME_DEAD = 4
+};
+
 struct SignalResult
 {
    bool isValid;
@@ -28,6 +37,7 @@ struct SignalResult
    int spreadPoints;
    double emaFast;
    double emaSlow;
+   int regime;
 };
 
 struct BotStats

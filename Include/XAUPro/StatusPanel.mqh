@@ -26,6 +26,7 @@ void DrawStatusPanel(SignalResult &signal)
    string panel =
       "XAU PRO BOT\n" +
       "Mode: " + string(DeveloperTestMode ? "DEV TEST" : "NORMAL") + "\n" +
+      "Regime: " + RegimeToText(signal.regime) + "\n" +
       "Trend: " + DirectionToPanelText(signal.direction) + "\n" +
       "ATR: " + DoubleToString(signal.atrValue, 2) + "\n" +
       "Spread: " + IntegerToString(signal.spreadPoints) + "\n" +

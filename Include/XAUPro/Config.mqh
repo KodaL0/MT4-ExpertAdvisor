@@ -19,6 +19,12 @@ input bool UseATRStops = true;
 input double ATRStopMultiplier = 0.5;
 input double ATRTakeProfitMultiplier = 1.0;
 
+input bool UseRegimeFilter = true;
+input double RegimeMinATR = 3.0;
+input double RegimeMaxATR = 25.0;
+input double RegimeMinEMASeparationPoints = 120.0;
+input double RegimeChaoticCandleATRRatio = 2.5;
+
 input bool UseSessionPreset = true;
 input int SessionPreset = 3; // 1=London, 2=NewYork, 3=London+NY, 4=Custom
 input int StartHour = 0;
@@ -65,6 +71,7 @@ input bool DeveloperIgnoreExtraFilter = false;
 input bool DeveloperIgnoreAbnormalCandle = false;
 input bool DeveloperIgnoreTrendStrength = false;
 input bool DeveloperIgnoreRejection = false;
+input bool DeveloperIgnoreRegimeFilter = false;
 
 input bool ShowStatusPanel = true;
 input int StatusPanelCorner = 0;

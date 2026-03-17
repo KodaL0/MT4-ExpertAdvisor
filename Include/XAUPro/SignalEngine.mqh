@@ -36,6 +36,7 @@ void LogSignalDiagnostics(SignalResult &r)
 
    Print("===== SIGNAL CHECK (M15) =====");
    Print("Direction      : ", DirectionToText(r.direction));
+   Print("Regime         : ", RegimeToText(r.regime));
    Print("Trend OK       : ", BoolText(r.trendOk));
    Print("Pullback OK    : ", BoolText(r.pullbackOk));
    Print("Rejection OK   : ", BoolText(r.rejectionOk));
@@ -73,6 +74,17 @@ SignalResult BuildSignal(bool doLog = true)
    result.spreadPoints = (int)((Ask - Bid) / Point);
    result.emaFast = iMA(Symbol(), TrendTimeframe, FastEMA, 0, MODE_EMA, PRICE_CLOSE, 1);
    result.emaSlow = iMA(Symbol(), TrendTimeframe, SlowEMA, 0, MODE_EMA, PRICE_CLOSE, 1);
+   result.regime = DetectMarketRegime();
+
+   if(!DeveloperTestMode || !DeveloperIgnoreRegimeFilter)
+   {
+      if(!IsTradableRegime())
+      {
+         result.reason = "Regime filter blocked trade";
+         if(doLog) LogSignalDiagnostics(result);
+         return result;
+      }
+   }
 
    int trend = GetTrendDirection();
    result.direction = trend;
