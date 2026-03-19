@@ -26,15 +26,27 @@ double NormalizeLotForBroker(double lot)
    return NormalizeDouble(lot, 2);
 }
 
-bool HasPartialCloseMarker(int ticket)
+string GetPartialCloseKey()
 {
-   string key = "XAU_PARTIAL_" + IntegerToString(ticket);
+   string key =
+      "XAU_PARTIAL_" +
+      Symbol() + "_" +
+      IntegerToString(MagicNumber) + "_" +
+      IntegerToString((int)OrderOpenTime()) + "_" +
+      DoubleToString(OrderOpenPrice(), Digits);
+
+   return key;
+}
+
+bool HasPartialCloseMarker()
+{
+   string key = GetPartialCloseKey();
    return GlobalVariableCheck(key);
 }
 
-void MarkPartialCloseDone(int ticket)
+void MarkPartialCloseDone()
 {
-   string key = "XAU_PARTIAL_" + IntegerToString(ticket);
+   string key = GetPartialCloseKey();
    GlobalVariableSet(key, TimeCurrent());
 }
 
@@ -100,7 +112,7 @@ void TryPartialClose()
       if(OrderSymbol() != Symbol() || OrderMagicNumber() != MagicNumber)
          continue;
 
-      if(HasPartialCloseMarker(OrderTicket()))
+      if(HasPartialCloseMarker())
          continue;
 
       double currentLots = OrderLots();
@@ -119,7 +131,7 @@ void TryPartialClose()
 
             if(OrderClose(OrderTicket(), lotsToClose, Bid, Slippage, clrYellow))
             {
-               MarkPartialCloseDone(OrderTicket());
+               MarkPartialCloseDone();
                LogTrade("Partial close executed on BUY ticket: " + IntegerToString(OrderTicket()));
             }
             else
@@ -140,7 +152,7 @@ void TryPartialClose()
 
             if(OrderClose(OrderTicket(), lotsToClose, Ask, Slippage, clrYellow))
             {
-               MarkPartialCloseDone(OrderTicket());
+               MarkPartialCloseDone();
                LogTrade("Partial close executed on SELL ticket: " + IntegerToString(OrderTicket()));
             }
             else
