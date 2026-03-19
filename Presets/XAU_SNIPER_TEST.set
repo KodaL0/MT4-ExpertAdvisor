@@ -1,6 +1,6 @@
 MagicNumber=2026031702
 Slippage=10
-MaxSpreadPoints=220
+MaxSpreadPoints=180
 
 StrategyMode=2
 
@@ -18,8 +18,8 @@ SniperPullbackEMA=20
 SniperUseSecondEMA=true
 SniperPullbackEMA2=50
 UseSniperATRProfile=true
-SniperATRStopMultiplier=0.45
-SniperATRTakeProfitMultiplier=0.90
+SniperATRStopMultiplier=0.55
+SniperATRTakeProfitMultiplier=1.10
 
 ATRPeriod=14
 MinATR=1.2
@@ -53,23 +53,23 @@ StopLossPoints=300
 TakeProfitPoints=600
 
 UseBreakEven=true
-BreakEvenTriggerPoints=180
-BreakEvenLockPoints=20
+BreakEvenTriggerPoints=220
+BreakEvenLockPoints=40
 
-UsePartialClose=true
+UsePartialClose=false
 PartialClosePercent=50.0
 PartialCloseTriggerPoints=180
 
 UseATRTrailing=true
-ATRTrailingMultiplier=1.1
+ATRTrailingMultiplier=1.25
 
 UseDailyGuard=true
-MaxTradesPerDay=12
+MaxTradesPerDay=8
 MaxConsecutiveLosses=5
 UseMaxDailyLossPercent=true
 MaxDailyLossPercent=2.0
 
-MaxOpenPositions=1
+MaxOpenPositions=2
 
 UseAbnormalCandleFilter=false
 MaxCandleToATRRatio=2.5
@@ -94,7 +94,7 @@ SpreadAveragePeriod=20
 SpreadSpikeMultiplier=3.0
 
 UseTradeCooldown=true
-CooldownBarsAfterTrade=1
+CooldownBarsAfterTrade=2
 CooldownBarsAfterLoss=2
 
 ShowStatusPanel=true

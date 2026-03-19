@@ -41,6 +41,12 @@ struct SignalResult
    double h4Fast;
    double h4Slow;
    int regime;
+
+   // 🔥 NEW FIELDS
+   int setupScore;
+   bool isStrongSignal;
+   bool isBreakoutSignal;
+   bool isPullbackSignal;
 };
 
 struct BotStats

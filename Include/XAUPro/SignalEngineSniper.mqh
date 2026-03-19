@@ -46,6 +46,14 @@ double GetLowerWick(double openPrice, double closePrice, double lowPrice)
    return MathMin(openPrice, closePrice) - lowPrice;
 }
 
+double GetClosePositionInRange(double closePrice, double lowPrice, double highPrice)
+{
+   double range = highPrice - lowPrice;
+   if(range <= 0)
+      return 0.0;
+   return (closePrice - lowPrice) / range;
+}
+
 bool IsBullishRejectionCandle(double openPrice, double closePrice, double highPrice, double lowPrice)
 {
    double range = GetCandleRange(highPrice, lowPrice);
@@ -168,17 +176,18 @@ bool IsSniperChoppy(double emaPull1, double emaPull2)
          prevDir = dir;
    }
 
-   if(directionChanges >= 4)
+   // Fixed bug: with 4 candles, >=4 can never happen
+   if(directionChanges >= 2)
       return true;
 
    return false;
 }
 
-double GetRecentRangeHigh(int barsBack)
+double GetRangeHighFromShift(int startShift, int barsCount)
 {
-   double highest = GetSniperHigh(1);
+   double highest = GetSniperHigh(startShift);
 
-   for(int i = 2; i <= barsBack; i++)
+   for(int i = startShift + 1; i < startShift + barsCount; i++)
    {
       double h = GetSniperHigh(i);
       if(h > highest)
@@ -188,11 +197,11 @@ double GetRecentRangeHigh(int barsBack)
    return highest;
 }
 
-double GetRecentRangeLow(int barsBack)
+double GetRangeLowFromShift(int startShift, int barsCount)
 {
-   double lowest = GetSniperLow(1);
+   double lowest = GetSniperLow(startShift);
 
-   for(int i = 2; i <= barsBack; i++)
+   for(int i = startShift + 1; i < startShift + barsCount; i++)
    {
       double l = GetSniperLow(i);
       if(l < lowest)
@@ -204,32 +213,62 @@ double GetRecentRangeLow(int barsBack)
 
 bool IsBullishBreakoutSetup(double bar1Open, double bar1Close, double bar1High, double bar1Low, double emaPull1, double atrValue)
 {
-   double recentHigh = GetRecentRangeHigh(4);
+   double recentHigh = GetRangeHighFromShift(2, 4);
    double range = bar1High - bar1Low;
 
    if(range <= 0 || atrValue <= 0)
       return false;
 
-   bool strongBullishBody = (bar1Close > bar1Open) && ((bar1Close - bar1Open) >= range * 0.35);
-   bool brokeRange = (bar1Close > recentHigh);
-   bool notTooExtended = ((bar1Close - emaPull1) <= atrValue * 1.10);
+   double body = MathAbs(bar1Close - bar1Open);
+   double upperWick = GetUpperWick(bar1Open, bar1Close, bar1High);
+   double closePos = GetClosePositionInRange(bar1Close, bar1Low, bar1High);
+   double breakDistance = bar1Close - recentHigh;
 
-   return (strongBullishBody && brokeRange && notTooExtended);
+   bool bullishBody = (bar1Close > bar1Open);
+   bool strongBody = (body >= range * 0.45);
+   bool closedBeyondRange = (bar1Close > recentHigh);
+   bool meaningfulBreak = (breakDistance >= atrValue * 0.05);
+   bool closeNearHigh = (closePos >= 0.70);
+   bool wickAcceptable = (upperWick <= body * 0.60);
+   bool notTooExtended = ((bar1Close - emaPull1) <= atrValue * 0.90);
+
+   return (bullishBody &&
+           strongBody &&
+           closedBeyondRange &&
+           meaningfulBreak &&
+           closeNearHigh &&
+           wickAcceptable &&
+           notTooExtended);
 }
 
 bool IsBearishBreakoutSetup(double bar1Open, double bar1Close, double bar1High, double bar1Low, double emaPull1, double atrValue)
 {
-   double recentLow = GetRecentRangeLow(4);
+   double recentLow = GetRangeLowFromShift(2, 4);
    double range = bar1High - bar1Low;
 
    if(range <= 0 || atrValue <= 0)
       return false;
 
-   bool strongBearishBody = (bar1Close < bar1Open) && ((bar1Open - bar1Close) >= range * 0.35);
-   bool brokeRange = (bar1Close < recentLow);
-   bool notTooExtended = ((emaPull1 - bar1Close) <= atrValue * 1.10);
+   double body = MathAbs(bar1Open - bar1Close);
+   double lowerWick = GetLowerWick(bar1Open, bar1Close, bar1Low);
+   double closePos = GetClosePositionInRange(bar1Close, bar1Low, bar1High);
+   double breakDistance = recentLow - bar1Close;
 
-   return (strongBearishBody && brokeRange && notTooExtended);
+   bool bearishBody = (bar1Close < bar1Open);
+   bool strongBody = (body >= range * 0.45);
+   bool closedBeyondRange = (bar1Close < recentLow);
+   bool meaningfulBreak = (breakDistance >= atrValue * 0.05);
+   bool closeNearLow = (closePos <= 0.30);
+   bool wickAcceptable = (lowerWick <= body * 0.60);
+   bool notTooExtended = ((emaPull1 - bar1Close) <= atrValue * 0.90);
+
+   return (bearishBody &&
+           strongBody &&
+           closedBeyondRange &&
+           meaningfulBreak &&
+           closeNearLow &&
+           wickAcceptable &&
+           notTooExtended);
 }
 
 SignalResult BuildSniperSignal(bool doLog = true)
@@ -258,6 +297,11 @@ SignalResult BuildSniperSignal(bool doLog = true)
    result.h4Fast = 0;
    result.h4Slow = 0;
    result.regime = REGIME_UNKNOWN;
+
+   result.setupScore = 0;
+   result.isStrongSignal = false;
+   result.isBreakoutSignal = false;
+   result.isPullbackSignal = false;
 
    if(IsSpreadSpike())
    {
@@ -330,9 +374,9 @@ SignalResult BuildSniperSignal(bool doLog = true)
    if(bias == DIR_BUY)
    {
       bool pulledBack =
-         (bar2Low <= emaPull1) ||
-         (SniperUseSecondEMA && bar2Low <= emaPull2) ||
-         (bar1Low <= emaPull1);
+         ((bar2Low <= emaPull1) && (bar2Close >= emaPull1 || bar1Close > emaPull1)) ||
+         (SniperUseSecondEMA && (bar2Low <= emaPull2)) ||
+         ((bar1Low <= emaPull1) && (bar1Close > emaPull1));
 
       bool bullishReject =
          IsBullishRejectionCandle(bar2Open, bar2Close, bar2High, bar2Low) ||
@@ -340,8 +384,10 @@ SignalResult BuildSniperSignal(bool doLog = true)
 
       bool bullishConfirm =
          IsStrongBullishBreakCandle(bar1Open, bar1Close, bar1High, bar1Low, bar2High) ||
-         (bar1Close > emaPull1 && bar1Close > bar1Open) ||
-         (bar1High > bar2High);
+         ((bar1Close > emaPull1) &&
+          (bar1Close > bar1Open) &&
+          ((bar1Close - bar1Open) >= (bar1High - bar1Low) * 0.35) &&
+          (bar1Close > bar2High));
 
       bool bullishBreakout =
          IsBullishBreakoutSetup(bar1Open, bar1Close, bar1High, bar1Low, emaPull1, result.atrValue);
@@ -364,11 +410,19 @@ SignalResult BuildSniperSignal(bool doLog = true)
       result.confirmationOk = bullishConfirm;
       result.extraFilterOk = extraOk;
 
-      bool allowPullbackBuy = (pulledBack && bullishReject && bullishConfirm && extraOk);
-      bool allowBreakoutBuy = (bullishBreakout && !isChoppy);
+      int buyScore = 0;
+      if(result.trendOk) buyScore += 2;
+      if(result.higherBiasOk) buyScore += 1;
+      if(pulledBack) buyScore += 1;
+      if(bullishReject) buyScore += 2;
+      if(bullishConfirm) buyScore += 2;
+      if(extraOk) buyScore += 1;
+      if(bullishBreakout) buyScore += 3;
+
+      bool allowPullbackBuy = (pulledBack && bullishConfirm && extraOk && buyScore >= 5);
+      bool allowBreakoutBuy = (bullishBreakout && extraOk && buyScore >= 6);
 
       if(allowPullbackBuy || allowBreakoutBuy)
-
       {
          double liveEntry = Ask;
          double stopAnchor = MathMin(bar1Low, bar2Low);
@@ -384,6 +438,11 @@ SignalResult BuildSniperSignal(bool doLog = true)
 
          double finalTpDistance = MathMax(baseTpDistance, finalStopDistance * rrMultiplier);
 
+         result.setupScore = buyScore;
+         result.isStrongSignal = (buyScore >= 8);
+         result.isBreakoutSignal = allowBreakoutBuy;
+         result.isPullbackSignal = allowPullbackBuy && !allowBreakoutBuy;
+
          result.isValid = true;
          result.direction = DIR_BUY;
          result.reason = allowBreakoutBuy ? "BUY breakout signal" : "BUY signal";
@@ -398,6 +457,7 @@ SignalResult BuildSniperSignal(bool doLog = true)
          return result;
       }
 
+      result.setupScore = buyScore;
       result.reason = "Sniper buy conditions not met";
       if(doLog) LogSignalDiagnostics(result);
       return result;
@@ -406,9 +466,9 @@ SignalResult BuildSniperSignal(bool doLog = true)
    if(bias == DIR_SELL)
    {
       bool pulledBack =
-         (bar2High >= emaPull1) ||
-         (SniperUseSecondEMA && bar2High >= emaPull2) ||
-         (bar1High >= emaPull1);
+         ((bar2High >= emaPull1) && (bar2Close <= emaPull1 || bar1Close < emaPull1)) ||
+         (SniperUseSecondEMA && (bar2High >= emaPull2)) ||
+         ((bar1High >= emaPull1) && (bar1Close < emaPull1));
 
       bool bearishReject =
          IsBearishRejectionCandle(bar2Open, bar2Close, bar2High, bar2Low) ||
@@ -416,8 +476,10 @@ SignalResult BuildSniperSignal(bool doLog = true)
 
       bool bearishConfirm =
          IsStrongBearishBreakCandle(bar1Open, bar1Close, bar1High, bar1Low, bar2Low) ||
-         (bar1Close < emaPull1 && bar1Close < bar1Open) ||
-         (bar1Low < bar2Low);
+         ((bar1Close < emaPull1) &&
+          (bar1Close < bar1Open) &&
+          ((bar1Open - bar1Close) >= (bar1High - bar1Low) * 0.35) &&
+          (bar1Close < bar2Low));
 
       bool bearishBreakout =
          IsBearishBreakoutSetup(bar1Open, bar1Close, bar1High, bar1Low, emaPull1, result.atrValue);
@@ -440,11 +502,19 @@ SignalResult BuildSniperSignal(bool doLog = true)
       result.confirmationOk = bearishConfirm;
       result.extraFilterOk = extraOk;
 
-      bool allowPullbackSell = (pulledBack && bearishReject && bearishConfirm && extraOk);
-      bool allowBreakoutSell = (bearishBreakout && !isChoppy);
+      int sellScore = 0;
+      if(result.trendOk) sellScore += 2;
+      if(result.higherBiasOk) sellScore += 1;
+      if(pulledBack) sellScore += 1;
+      if(bearishReject) sellScore += 2;
+      if(bearishConfirm) sellScore += 2;
+      if(extraOk) sellScore += 1;
+      if(bearishBreakout) sellScore += 3;
+
+      bool allowPullbackSell = (pulledBack && bearishConfirm && extraOk && sellScore >= 5);
+      bool allowBreakoutSell = (bearishBreakout && extraOk && sellScore >= 6);
 
       if(allowPullbackSell || allowBreakoutSell)
-
       {
          double liveEntry = Bid;
          double stopAnchor = MathMax(bar1High, bar2High);
@@ -460,6 +530,11 @@ SignalResult BuildSniperSignal(bool doLog = true)
 
          double finalTpDistance = MathMax(baseTpDistance, finalStopDistance * rrMultiplier);
 
+         result.setupScore = sellScore;
+         result.isStrongSignal = (sellScore >= 8);
+         result.isBreakoutSignal = allowBreakoutSell;
+         result.isPullbackSignal = allowPullbackSell && !allowBreakoutSell;
+
          result.isValid = true;
          result.direction = DIR_SELL;
          result.reason = allowBreakoutSell ? "SELL breakout signal" : "SELL signal";
@@ -474,6 +549,7 @@ SignalResult BuildSniperSignal(bool doLog = true)
          return result;
       }
 
+      result.setupScore = sellScore;
       result.reason = "Sniper sell conditions not met";
       if(doLog) LogSignalDiagnostics(result);
       return result;

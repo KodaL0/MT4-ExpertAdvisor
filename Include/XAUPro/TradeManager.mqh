@@ -26,6 +26,18 @@ double NormalizeLotForBroker(double lot)
    return NormalizeDouble(lot, 2);
 }
 
+bool IsRunnerTrade()
+{
+   string comment = OrderComment();
+   return (StringFind(comment, "_RUN", 0) >= 0);
+}
+
+bool IsTPTrade()
+{
+   string comment = OrderComment();
+   return (StringFind(comment, "_TP", 0) >= 0);
+}
+
 string GetPartialCloseKey()
 {
    string key =
@@ -110,6 +122,9 @@ void TryPartialClose()
          continue;
 
       if(OrderSymbol() != Symbol() || OrderMagicNumber() != MagicNumber)
+         continue;
+
+      if(IsRunnerTrade())
          continue;
 
       if(HasPartialCloseMarker())

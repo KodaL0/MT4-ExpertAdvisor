@@ -41,7 +41,7 @@ bool IsRetryableTradeError(int err)
    return (err == 4 || err == 6 || err == 128 || err == 135 || err == 136 || err == 137 || err == 138 || err == 146);
 }
 
-bool ExecuteSignal(SignalResult &signal, double lotSize)
+bool SendSingleOrder(SignalResult &signal, double lotSize, string customLabel, double customTP)
 {
    if(lotSize <= 0)
    {
@@ -85,9 +85,9 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
 
    signal.entryPrice = NormalizePrice(liveEntry);
    signal.stopLossPrice = NormalizePrice(signal.stopLossPrice);
-   signal.takeProfitPrice = NormalizePrice(signal.takeProfitPrice);
+   customTP = NormalizePrice(customTP);
 
-   if(!IsStopDistanceValid(signal.direction, signal.entryPrice, signal.stopLossPrice, signal.takeProfitPrice))
+   if(!IsStopDistanceValid(signal.direction, signal.entryPrice, signal.stopLossPrice, customTP))
    {
       LogSkip("Execution blocked: stop distance too small for broker");
       return false;
@@ -112,10 +112,11 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
       LogInfo(
          "Sending " + DirectionToText(signal.direction) +
          " | Attempt=" + IntegerToString(attempt) +
-         " Lot=" + DoubleToString(lotSize, 2) +
+         " Label=" + customLabel +
+         " | Lot=" + DoubleToString(lotSize, 2) +
          " Entry=" + DoubleToString(sendPrice, Digits) +
          " SL=" + DoubleToString(signal.stopLossPrice, Digits) +
-         " TP=" + DoubleToString(signal.takeProfitPrice, Digits)
+         " TP=" + DoubleToString(customTP, Digits)
       );
 
       ResetLastError();
@@ -129,8 +130,8 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
             sendPrice,
             Slippage,
             signal.stopLossPrice,
-            signal.takeProfitPrice,
-            signal.label,
+            customTP,
+            customLabel,
             MagicNumber,
             0,
             clrGreen
@@ -145,8 +146,8 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
             sendPrice,
             Slippage,
             signal.stopLossPrice,
-            signal.takeProfitPrice,
-            signal.label,
+            customTP,
+            customLabel,
             MagicNumber,
             0,
             clrRed
@@ -156,7 +157,7 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
       if(ticket >= 0)
       {
          RegisterTrade();
-         LogTrade("Order opened ticket: " + IntegerToString(ticket));
+         LogTrade("Order opened ticket: " + IntegerToString(ticket) + " | " + customLabel);
          return true;
       }
 
@@ -164,6 +165,7 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
       string errText = GetTradeErrorText(err);
 
       LogError("OrderSend failed | Attempt=" + IntegerToString(attempt) +
+               " | Label=" + customLabel +
                " | Code=" + IntegerToString(err) +
                " | Reason=" + errText);
 
@@ -174,6 +176,57 @@ bool ExecuteSignal(SignalResult &signal, double lotSize)
 
       Sleep(500);
    }
+
+   return false;
+}
+
+bool ExecuteSignal(SignalResult &signal, double lotSize)
+{
+   if(lotSize <= 0)
+   {
+      LogSkip("Execution blocked: invalid lot size");
+      return false;
+   }
+
+   lotSize = NormalizeLot(lotSize);
+
+   if(lotSize <= 0)
+   {
+      LogSkip("Execution blocked: normalized lot size invalid");
+      return false;
+   }
+
+   // Normal signal = 1 trade
+   if(!signal.isStrongSignal)
+   {
+      return SendSingleOrder(signal, lotSize, signal.label, signal.takeProfitPrice);
+   }
+
+   // Strong signal = 2 trades
+   double splitLot = NormalizeLot(lotSize / 2.0);
+
+   if(splitLot <= 0)
+   {
+      LogSkip("Execution blocked: split lot invalid");
+      return false;
+   }
+
+   double minLot = MarketInfo(Symbol(), MODE_MINLOT);
+   if(splitLot < minLot)
+   {
+      LogSkip("Execution blocked: split lot below broker minimum");
+      return false;
+   }
+
+   string baseLabel = signal.label;
+   string tpLabel = baseLabel + "_TP";
+   string runLabel = baseLabel + "_RUN";
+
+   bool tpOk = SendSingleOrder(signal, splitLot, tpLabel, signal.takeProfitPrice);
+   bool runOk = SendSingleOrder(signal, splitLot, runLabel, 0);
+
+   if(tpOk || runOk)
+      return true;
 
    return false;
 }
