@@ -1,0 +1,44 @@
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: [INFO] Daily counters reset
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ===== SIGNAL CHECK (M15) =====
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Direction      : SELL
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Regime         : TRENDING
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Trend OK       : YES
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Pullback OK    : NO
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Rejection OK   : YES
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Confirmation OK: YES
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Extra Filter OK: YES
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ATR            : 9.37
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Spread         : 17
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: EMA Fast       : 5035.43
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: EMA Slow       : 5103.24
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: SL Price       : 0.00
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: TP Price       : 0.00
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Result         : Sell conditions not met
+0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ==============================
+0	09:38:54.616	XAU_Pro_EA XAUUSDcheck,M15: [SKIP] Sell conditions not met
+0	09:38:59.000	XAU_Pro_EA XAUUSDcheck,M15: uninit reason 9
+0	09:38:59.158	Expert XAU_Pro_EA XAUUSDcheck,M15: removed
+0	10:47:29.394	Expert XAU_Pro_EA XAUUSDcheck,M15: loaded successfully
+0	10:47:29.394	XAU_Pro_EA XAUUSDcheck,M15 inputs: MagicNumber=20260316; Slippage=10; MaxSpreadPoints=80; TrendTimeframe=60; FastEMA=50; SlowEMA=200; PullbackEMA1=20; PullbackEMA2=50; ATRPeriod=14; MinATR=2.0; MaxATR=1000.0; UseATRStops=true; ATRStopMultiplier=0.5; ATRTakeProfitMultiplier=1.0; UseRegimeFilter=true; RegimeMinATR=3.0; RegimeMaxATR=25.0; RegimeMinEMASeparationPoints=120.0; RegimeChaoticCandleATRRatio=2.5; UseSessionPreset=false; SessionPreset=3; StartHour=0; EndHour=24; UseRiskPercent=true; RiskPercent=1.0; FixedLotSize=0.01; StopLossPoints=300; TakeProfitPoints=600; UseBreakEven=true; BreakEvenTriggerPoints=300; BreakEvenLockPoints=50; UsePartialClose=true; PartialClosePercent=50.0; PartialCloseTriggerPoints=300; UseATRTrailing=true; ATRTrailingMultiplier=1.5; UseDailyGuard=false; MaxTradesPerDay=5; MaxConsecutiveLosses=3; UseMaxDailyLossPercent=true; MaxDailyLossPercent=2.0; MaxOpenPositions=1; UseAbnormalCandleFilter=false; MaxCandleToATRRatio=2.0; UseEMASeparationFilter=false; MinEMASeparationPoints=150.0; EnableDebugLogs=true; 
+0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: [INFO] XAU Pro EA V2 initialized
+0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: [INFO] History tracking initialized at total: 101
+0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: initialized
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ===== SIGNAL CHECK (M15) =====
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Direction      : NONE
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Regime         : CHAOTIC
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Trend OK       : NO
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Pullback OK    : NO
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Rejection OK   : NO
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Confirmation OK: NO
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Extra Filter OK: NO
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ATR            : 25.75
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Spread         : 17
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: EMA Fast       : 4925.12
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: EMA Slow       : 5041.44
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: SL Price       : 0.00
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: TP Price       : 0.00
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Result         : Regime filter blocked trade
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ==============================
+0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: [SKIP] Regime filter blocked trade
+0	10:47:38.704	XAU_Pro_EA XAUUSDcheck,M15: uninit reason 1
+0	10:47:38.720	Expert XAU_Pro_EA XAUUSDcheck,M15: removed

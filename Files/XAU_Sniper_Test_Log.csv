@@ -1,0 +1,2 @@
+close_time,symbol,ticket,type,lots,open_price,close_price,stop_loss,take_profit,profit,swap,commission,net_profit,magic_number,comment
+2026.03.18 21:03:49,XAUUSD,1561141606,SELL,0.01,4867.36,4865.32,4875.57,4835.83,2.04,0.00,0.00,2.04,2026031702,SniperSell

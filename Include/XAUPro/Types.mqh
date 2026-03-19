@@ -32,11 +32,14 @@ struct SignalResult
    bool rejectionOk;
    bool confirmationOk;
    bool extraFilterOk;
+   bool higherBiasOk;
 
    double atrValue;
    int spreadPoints;
    double emaFast;
    double emaSlow;
+   double h4Fast;
+   double h4Slow;
    int regime;
 };
 
@@ -48,6 +51,7 @@ struct BotStats
    int consecutiveLosses;
    int openPositions;
    double dailyClosedPnL;
+   int cooldownBarsRemaining;
 };
 
 #endif

@@ -5,7 +5,7 @@ int g_lastHistoryTotal = 0;
 
 double GetTrailATR()
 {
-   return iATR(Symbol(), PERIOD_M15, ATRPeriod, 1);
+   return iATR(Symbol(), GetManagementATRTimeframe(), ATRPeriod, 1);
 }
 
 double NormalizeLotForBroker(double lot)
@@ -19,6 +19,9 @@ double NormalizeLotForBroker(double lot)
 
    lot = MathMax(minLot, MathMin(maxLot, lot));
    lot = MathFloor(lot / lotStep) * lotStep;
+
+   if(lot < minLot)
+      lot = minLot;
 
    return NormalizeDouble(lot, 2);
 }
@@ -35,6 +38,47 @@ void MarkPartialCloseDone(int ticket)
    GlobalVariableSet(key, TimeCurrent());
 }
 
+bool IsBrokerStopDistanceValidForModify(int orderType, double referencePrice, double newSL, double tpPrice)
+{
+   int stopLevelPoints = (int)MarketInfo(Symbol(), MODE_STOPLEVEL);
+   double minStopDistance = stopLevelPoints * Point;
+
+   if(minStopDistance <= 0)
+      return true;
+
+   if(orderType == OP_BUY)
+   {
+      if((referencePrice - newSL) < minStopDistance)
+         return false;
+      if(tpPrice > 0 && (tpPrice - referencePrice) < minStopDistance)
+         return false;
+   }
+   else if(orderType == OP_SELL)
+   {
+      if((newSL - referencePrice) < minStopDistance)
+         return false;
+      if(tpPrice > 0 && (referencePrice - tpPrice) < minStopDistance)
+         return false;
+   }
+
+   return true;
+}
+
+bool IsValidPartialCloseLots(double currentLots, double lotsToClose)
+{
+   double minLot = MarketInfo(Symbol(), MODE_MINLOT);
+
+   if(lotsToClose < minLot)
+      return false;
+
+   double remainingLots = NormalizeLotForBroker(currentLots - lotsToClose);
+
+   if(remainingLots > 0 && remainingLots < minLot)
+      return false;
+
+   return true;
+}
+
 void InitializeTradeHistoryTracking()
 {
    g_lastHistoryTotal = OrdersHistoryTotal();
@@ -45,6 +89,8 @@ void TryPartialClose()
 {
    if(!UsePartialClose)
       return;
+
+   RefreshRates();
 
    for(int i = OrdersTotal() - 1; i >= 0; i--)
    {
@@ -57,10 +103,10 @@ void TryPartialClose()
       if(HasPartialCloseMarker(OrderTicket()))
          continue;
 
-      double lotsToClose = NormalizeLotForBroker(OrderLots() * (PartialClosePercent / 100.0));
-      double minLot = MarketInfo(Symbol(), MODE_MINLOT);
+      double currentLots = OrderLots();
+      double lotsToClose = NormalizeLotForBroker(currentLots * (PartialClosePercent / 100.0));
 
-      if(lotsToClose < minLot)
+      if(!IsValidPartialCloseLots(currentLots, lotsToClose))
          continue;
 
       if(OrderType() == OP_BUY)
@@ -69,6 +115,8 @@ void TryPartialClose()
 
          if(profitPoints >= PartialCloseTriggerPoints)
          {
+            RefreshRates();
+
             if(OrderClose(OrderTicket(), lotsToClose, Bid, Slippage, clrYellow))
             {
                MarkPartialCloseDone(OrderTicket());
@@ -76,7 +124,9 @@ void TryPartialClose()
             }
             else
             {
-               LogError("Partial close failed on BUY");
+               int err = GetLastError();
+               LogError("Partial close failed on BUY | Code=" + IntegerToString(err));
+               ResetLastError();
             }
          }
       }
@@ -86,6 +136,8 @@ void TryPartialClose()
 
          if(profitPoints >= PartialCloseTriggerPoints)
          {
+            RefreshRates();
+
             if(OrderClose(OrderTicket(), lotsToClose, Ask, Slippage, clrYellow))
             {
                MarkPartialCloseDone(OrderTicket());
@@ -93,7 +145,9 @@ void TryPartialClose()
             }
             else
             {
-               LogError("Partial close failed on SELL");
+               int err = GetLastError();
+               LogError("Partial close failed on SELL | Code=" + IntegerToString(err));
+               ResetLastError();
             }
          }
       }
@@ -104,6 +158,8 @@ void TryBreakEven()
 {
    if(!UseBreakEven)
       return;
+
+   RefreshRates();
 
    for(int i = OrdersTotal() - 1; i >= 0; i--)
    {
@@ -120,10 +176,16 @@ void TryBreakEven()
 
          if(profitPoints >= BreakEvenTriggerPoints)
          {
-            if(OrderStopLoss() < targetSL)
+            if((OrderStopLoss() == 0 || OrderStopLoss() < targetSL) &&
+               targetSL < Bid &&
+               IsBrokerStopDistanceValidForModify(OP_BUY, Bid, targetSL, OrderTakeProfit()))
             {
                if(!OrderModify(OrderTicket(), OrderOpenPrice(), targetSL, OrderTakeProfit(), 0, clrGreen))
-                  LogError("Failed moving BUY to breakeven");
+               {
+                  int err = GetLastError();
+                  LogError("Failed moving BUY to breakeven | Code=" + IntegerToString(err));
+                  ResetLastError();
+               }
             }
          }
       }
@@ -134,10 +196,16 @@ void TryBreakEven()
 
          if(profitPoints >= BreakEvenTriggerPoints)
          {
-            if(OrderStopLoss() == 0 || OrderStopLoss() > targetSL)
+            if((OrderStopLoss() == 0 || OrderStopLoss() > targetSL) &&
+               targetSL > Ask &&
+               IsBrokerStopDistanceValidForModify(OP_SELL, Ask, targetSL, OrderTakeProfit()))
             {
                if(!OrderModify(OrderTicket(), OrderOpenPrice(), targetSL, OrderTakeProfit(), 0, clrRed))
-                  LogError("Failed moving SELL to breakeven");
+               {
+                  int err = GetLastError();
+                  LogError("Failed moving SELL to breakeven | Code=" + IntegerToString(err));
+                  ResetLastError();
+               }
             }
          }
       }
@@ -155,6 +223,8 @@ void TryATRTrailing()
 
    double trailDistance = atr * ATRTrailingMultiplier;
 
+   RefreshRates();
+
    for(int i = OrdersTotal() - 1; i >= 0; i--)
    {
       if(!OrderSelect(i, SELECT_BY_POS, MODE_TRADES))
@@ -167,20 +237,32 @@ void TryATRTrailing()
       {
          double newSL = NormalizePrice(Bid - trailDistance);
 
-         if(newSL > OrderStopLoss() && newSL < Bid)
+         if(newSL > OrderStopLoss() &&
+            newSL < Bid &&
+            IsBrokerStopDistanceValidForModify(OP_BUY, Bid, newSL, OrderTakeProfit()))
          {
             if(!OrderModify(OrderTicket(), OrderOpenPrice(), newSL, OrderTakeProfit(), 0, clrAqua))
-               LogError("ATR trailing failed on BUY");
+            {
+               int err = GetLastError();
+               LogError("ATR trailing failed on BUY | Code=" + IntegerToString(err));
+               ResetLastError();
+            }
          }
       }
       else if(OrderType() == OP_SELL)
       {
          double newSL = NormalizePrice(Ask + trailDistance);
 
-         if((OrderStopLoss() == 0 || newSL < OrderStopLoss()) && newSL > Ask)
+         if((OrderStopLoss() == 0 || newSL < OrderStopLoss()) &&
+            newSL > Ask &&
+            IsBrokerStopDistanceValidForModify(OP_SELL, Ask, newSL, OrderTakeProfit()))
          {
             if(!OrderModify(OrderTicket(), OrderOpenPrice(), newSL, OrderTakeProfit(), 0, clrAqua))
-               LogError("ATR trailing failed on SELL");
+            {
+               int err = GetLastError();
+               LogError("ATR trailing failed on SELL | Code=" + IntegerToString(err));
+               ResetLastError();
+            }
          }
       }
    }

@@ -9,7 +9,7 @@ bool IsSpreadOk()
 
 double GetATRValue(int shift = 1)
 {
-   return iATR(Symbol(), PERIOD_M15, ATRPeriod, shift);
+   return iATR(Symbol(), GetSignalATRTimeframe(), ATRPeriod, shift);
 }
 
 bool IsVolatilityOk()
@@ -30,11 +30,19 @@ bool IsAbnormalCandle()
    if(!UseAbnormalCandleFilter)
       return false;
 
+   ENUM_TIMEFRAMES tf = GetSignalATRTimeframe();
+
    double atr = GetATRValue(1);
    if(atr <= 0)
       return false;
 
-   double candleSize = High[1] - Low[1];
+   double candleHigh = iHigh(Symbol(), tf, 1);
+   double candleLow  = iLow(Symbol(), tf, 1);
+   double candleSize = candleHigh - candleLow;
+
+   if(candleSize <= 0)
+      return false;
+
    double ratio = candleSize / atr;
 
    return (ratio > MaxCandleToATRRatio);

@@ -9,6 +9,15 @@ datetime g_lastTradeDay = 0;
 double g_dailyClosedPnL = 0.0;
 double g_dayStartBalance = 0.0;
 
+datetime g_lastTradeBarTime = 0;
+bool g_lastClosedTradeWasLoss = false;
+
+datetime GetCurrentStrategyBarTime()
+{
+   ENUM_TIMEFRAMES tf = GetRequiredEntryTimeframe();
+   return iTime(Symbol(), tf, 0);
+}
+
 void ResetDailyCountersIfNeeded()
 {
    datetime now = TimeCurrent();
@@ -34,6 +43,8 @@ void ResetDailyCountersIfNeeded()
       g_dailyClosedPnL = 0.0;
       g_lastTradeDay = now;
       g_dayStartBalance = AccountBalance();
+      g_lastClosedTradeWasLoss = false;
+      g_lastTradeBarTime = 0;
 
       LogInfo("Daily counters reset");
    }
@@ -48,6 +59,54 @@ double GetCurrentDailyLossPercent()
       return 0.0;
 
    return MathAbs(g_dailyClosedPnL) / g_dayStartBalance * 100.0;
+}
+
+int GetBarsSinceLastTrade()
+{
+   if(g_lastTradeBarTime == 0)
+      return 9999;
+
+   ENUM_TIMEFRAMES tf = GetRequiredEntryTimeframe();
+   int shift = iBarShift(Symbol(), tf, g_lastTradeBarTime, false);
+
+   if(shift < 0)
+      return 9999;
+
+   return shift;
+}
+
+int GetRequiredCooldownBars()
+{
+   if(!UseTradeCooldown)
+      return 0;
+
+   if(g_lastClosedTradeWasLoss)
+      return CooldownBarsAfterLoss;
+
+   return CooldownBarsAfterTrade;
+}
+
+int GetCooldownBarsRemaining()
+{
+   if(!UseTradeCooldown)
+      return 0;
+
+   int requiredBars = GetRequiredCooldownBars();
+   int barsSinceTrade = GetBarsSinceLastTrade();
+
+   int remaining = requiredBars - barsSinceTrade;
+   if(remaining < 0)
+      remaining = 0;
+
+   return remaining;
+}
+
+bool IsCooldownActive()
+{
+   if(!UseTradeCooldown)
+      return false;
+
+   return GetCooldownBarsRemaining() > 0;
 }
 
 bool CanTradeToday()
@@ -87,6 +146,7 @@ void RegisterTrade()
    ResetDailyCountersIfNeeded();
    g_tradesToday++;
    g_lastTradeDay = TimeCurrent();
+   g_lastTradeBarTime = GetCurrentStrategyBarTime();
 }
 
 void RegisterTradeResult(double profit)
@@ -94,6 +154,7 @@ void RegisterTradeResult(double profit)
    ResetDailyCountersIfNeeded();
 
    g_dailyClosedPnL += profit;
+   g_lastClosedTradeWasLoss = (profit < 0);
 
    if(profit < 0)
    {
@@ -118,6 +179,7 @@ BotStats GetBotStats()
    s.consecutiveLosses = g_consecutiveLosses;
    s.openPositions = CountOpenPositionsByMagic(Symbol(), MagicNumber);
    s.dailyClosedPnL = g_dailyClosedPnL;
+   s.cooldownBarsRemaining = GetCooldownBarsRemaining();
    return s;
 }
 

@@ -17,25 +17,31 @@
 #include <XAUPro/StatusPanel.mqh>
 #include <XAUPro/TradeJournal.mqh>
 #include <XAUPro/RegimeFilter.mqh>
+#include <XAUPro/SpreadFilter.mqh>
 
 datetime g_lastBarTime = 0;
 SignalResult g_lastSignal;
 
 int OnInit()
 {
-   LogInfo("XAU Pro EA V2 initialized");
+   g_lastBarTime = iTime(Symbol(), GetRequiredEntryTimeframe(), 0);
+
+   LogInfo("XAU Pro EA initialized | Strategy=" + GetStrategyModeName());
    InitializeTradeHistoryTracking();
+   EnsureTradeJournalHeader();
+
    return(INIT_SUCCEEDED);
 }
 
 void OnTick()
 {
+   UpdateSpreadHistory();
    UpdateClosedTradesStats();
 
    if(!IsCorrectSymbol())
       return;
 
-   if(Period() != PERIOD_M15)
+   if(!IsStrategyChartTimeframe())
       return;
 
    ManageOpenPositions();
@@ -67,6 +73,12 @@ void OnTick()
    if(!CanTradeToday())
    {
       LogSkip("Daily guard blocked trade");
+      return;
+   }
+
+   if(IsCooldownActive())
+   {
+      LogSkip("Cooldown active | Bars remaining: " + IntegerToString(GetCooldownBarsRemaining()));
       return;
    }
 
