@@ -47,7 +47,16 @@ struct SignalResult
    bool isStrongSignal;
    bool isBreakoutSignal;
    bool isPullbackSignal;
+
+   // HTF structure awareness
+   bool   htfStructureOk;
+   double htfSwingHigh;
+   double htfSwingLow;
+   double htfDistToHigh;
+   double htfDistToLow;
+   int    htfBiasScore;
 };
+
 
 struct BotStats
 {

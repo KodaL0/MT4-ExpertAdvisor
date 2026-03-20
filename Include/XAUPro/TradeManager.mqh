@@ -124,7 +124,7 @@ void TryPartialClose()
       if(OrderSymbol() != Symbol() || OrderMagicNumber() != MagicNumber)
          continue;
 
-      if(IsRunnerTrade())
+      if(IsRunnerTrade() || IsTPTrade())
          continue;
 
       if(HasPartialCloseMarker())
@@ -262,6 +262,12 @@ void TryATRTrailing()
 
       if(OrderType() == OP_BUY)
       {
+         double profitPoints = (Bid - OrderOpenPrice()) / Point;
+
+         // Do not start trailing too early
+         if(profitPoints < TrailActivationPoints)
+            continue;
+
          double newSL = NormalizePrice(Bid - trailDistance);
 
          if(newSL > OrderStopLoss() &&
@@ -278,6 +284,12 @@ void TryATRTrailing()
       }
       else if(OrderType() == OP_SELL)
       {
+         double profitPoints = (OrderOpenPrice() - Ask) / Point;
+
+         // Do not start trailing too early
+         if(profitPoints < TrailActivationPoints)
+            continue;
+
          double newSL = NormalizePrice(Ask + trailDistance);
 
          if((OrderStopLoss() == 0 || newSL < OrderStopLoss()) &&

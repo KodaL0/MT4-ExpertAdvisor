@@ -18,6 +18,7 @@
 #include <XAUPro/TradeJournal.mqh>
 #include <XAUPro/RegimeFilter.mqh>
 #include <XAUPro/SpreadFilter.mqh>
+#include <XAUPro/HTFStructure.mqh>
 
 datetime g_lastBarTime = 0;
 SignalResult g_lastSignal;

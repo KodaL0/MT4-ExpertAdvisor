@@ -1,44 +1,156 @@
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: [INFO] Daily counters reset
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ===== SIGNAL CHECK (M15) =====
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Direction      : SELL
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Regime         : TRENDING
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Trend OK       : YES
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Pullback OK    : NO
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Rejection OK   : YES
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Confirmation OK: YES
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Extra Filter OK: YES
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ATR            : 9.37
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Spread         : 17
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: EMA Fast       : 5035.43
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: EMA Slow       : 5103.24
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: SL Price       : 0.00
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: TP Price       : 0.00
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: Result         : Sell conditions not met
-0	09:38:49.349	XAU_Pro_EA XAUUSDcheck,M15: ==============================
-0	09:38:54.616	XAU_Pro_EA XAUUSDcheck,M15: [SKIP] Sell conditions not met
-0	09:38:59.000	XAU_Pro_EA XAUUSDcheck,M15: uninit reason 9
-0	09:38:59.158	Expert XAU_Pro_EA XAUUSDcheck,M15: removed
-0	10:47:29.394	Expert XAU_Pro_EA XAUUSDcheck,M15: loaded successfully
-0	10:47:29.394	XAU_Pro_EA XAUUSDcheck,M15 inputs: MagicNumber=20260316; Slippage=10; MaxSpreadPoints=80; TrendTimeframe=60; FastEMA=50; SlowEMA=200; PullbackEMA1=20; PullbackEMA2=50; ATRPeriod=14; MinATR=2.0; MaxATR=1000.0; UseATRStops=true; ATRStopMultiplier=0.5; ATRTakeProfitMultiplier=1.0; UseRegimeFilter=true; RegimeMinATR=3.0; RegimeMaxATR=25.0; RegimeMinEMASeparationPoints=120.0; RegimeChaoticCandleATRRatio=2.5; UseSessionPreset=false; SessionPreset=3; StartHour=0; EndHour=24; UseRiskPercent=true; RiskPercent=1.0; FixedLotSize=0.01; StopLossPoints=300; TakeProfitPoints=600; UseBreakEven=true; BreakEvenTriggerPoints=300; BreakEvenLockPoints=50; UsePartialClose=true; PartialClosePercent=50.0; PartialCloseTriggerPoints=300; UseATRTrailing=true; ATRTrailingMultiplier=1.5; UseDailyGuard=false; MaxTradesPerDay=5; MaxConsecutiveLosses=3; UseMaxDailyLossPercent=true; MaxDailyLossPercent=2.0; MaxOpenPositions=1; UseAbnormalCandleFilter=false; MaxCandleToATRRatio=2.0; UseEMASeparationFilter=false; MinEMASeparationPoints=150.0; EnableDebugLogs=true; 
-0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: [INFO] XAU Pro EA V2 initialized
-0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: [INFO] History tracking initialized at total: 101
-0	10:47:31.758	XAU_Pro_EA XAUUSDcheck,M15: initialized
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ===== SIGNAL CHECK (M15) =====
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Direction      : NONE
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Regime         : CHAOTIC
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Trend OK       : NO
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Pullback OK    : NO
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Rejection OK   : NO
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Confirmation OK: NO
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Extra Filter OK: NO
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ATR            : 25.75
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Spread         : 17
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: EMA Fast       : 4925.12
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: EMA Slow       : 5041.44
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: SL Price       : 0.00
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: TP Price       : 0.00
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: Result         : Regime filter blocked trade
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: ==============================
-0	10:47:31.963	XAU_Pro_EA XAUUSDcheck,M15: [SKIP] Regime filter blocked trade
-0	10:47:38.704	XAU_Pro_EA XAUUSDcheck,M15: uninit reason 1
-0	10:47:38.720	Expert XAU_Pro_EA XAUUSDcheck,M15: removed
+0	00:00:36.709	XAU_Pro_EA XAUUSD,M5: ===== SIGNAL CHECK =====
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Strategy       : SNIPER
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Direction      : SELL
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Regime         : UNKNOWN
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Trend OK       : YES
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Higher Bias OK : YES
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Pullback OK    : NO
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Rejection OK   : NO
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Confirmation OK: YES
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Extra Filter OK: NO
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: ATR            : 9.31
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Spread         : 25
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: EMA Fast       : 4909.89
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: EMA Slow       : 4972.89
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: H4 EMA Fast    : 0.00
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: H4 EMA Slow    : 0.00
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: SL Price       : 0.00
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: TP Price       : 0.00
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: Result         : Sniper sell conditions not met
+0	00:00:36.710	XAU_Pro_EA XAUUSD,M5: ========================
+0	00:00:36.712	XAU_Pro_EA XAUUSD,M5: [SKIP] Sniper sell conditions not met
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: ===== SIGNAL CHECK =====
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Strategy       : SNIPER
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Direction      : SELL
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Regime         : UNKNOWN
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Trend OK       : YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Higher Bias OK : YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Pullback OK    : YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Rejection OK   : YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Confirmation OK: YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Extra Filter OK: YES
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: ATR            : 9.92
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Spread         : 26
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: EMA Fast       : 4874.72
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: EMA Slow       : 4949.20
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: H4 EMA Fast    : 0.00
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: H4 EMA Slow    : 0.00
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: SL Price       : 4837.13
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: TP Price       : 4802.75
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: Result         : SELL signal
+0	00:05:01.035	XAU_Pro_EA XAUUSD,M5: ========================
+0	00:05:01.036	XAU_Pro_EA XAUUSD,M5: [INFO] Sending SELL | Attempt=1 Lot=0.87 Entry=4825.67 SL=4837.13 TP=4802.75
+0	00:05:01.144	XAU_Pro_EA XAUUSD,M5: [ERROR] OrderSend failed | Attempt=1 | Code=138 | Reason=Requote | Code=0
+0	00:05:01.683	XAU_Pro_EA XAUUSD,M5: [INFO] Sending SELL | Attempt=2 Lot=0.87 Entry=4825.64 SL=4837.13 TP=4802.75
+2	00:05:01.808	XAU_Pro_EA XAUUSD,M5: open #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4837.13 tp: 4802.75 ok
+0	00:05:01.808	XAU_Pro_EA XAUUSD,M5: [TRADE] Order opened ticket: 1561193390
+0	00:05:01.808	XAU_Pro_EA XAUUSD,M5: [TRADE] Trade executed: SniperSell
+2	00:05:01.940	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4836.81 tp: 4802.75 ok
+2	00:06:01.787	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4836.77 tp: 4802.75 ok
+2	00:06:01.926	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4836.47 tp: 4802.75 ok
+2	00:06:02.623	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4836.05 tp: 4802.75 ok
+2	00:06:02.933	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4835.71 tp: 4802.75 ok
+2	00:06:03.755	XAU_Pro_EA XAUUSD,M5: modify #1561193390 sell 0.87 XAUUSD at 4825.64 sl: 4835.48 tp: 4802.75 ok
+2	00:06:03.866	XAU_Pro_EA XAUUSD,M5: close #1561193390 sell 0.43 XAUUSD at 4825.64 sl: 4835.48 tp: 4802.75 at price 4823.37
+0	00:06:03.867	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193390
+2	00:06:03.974	XAU_Pro_EA XAUUSD,M5: modify #1561193604 sell 0.44 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 ok
+0	00:06:04.054	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=97.61
+2	00:06:04.160	XAU_Pro_EA XAUUSD,M5: close #1561193604 sell 0.22 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.23
+0	00:06:04.160	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193604
+0	00:06:04.240	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=53.02
+2	00:06:04.346	XAU_Pro_EA XAUUSD,M5: close #1561193618 sell 0.11 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.80
+0	00:06:04.346	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193618
+0	00:06:04.364	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=20.24
+2	00:06:04.470	XAU_Pro_EA XAUUSD,M5: close #1561193623 sell 0.05 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.36
+0	00:06:04.470	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193623
+0	00:06:04.470	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=11.40
+2	00:06:04.579	XAU_Pro_EA XAUUSD,M5: close #1561193625 sell 0.03 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4822.77
+0	00:06:04.579	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193625
+0	00:06:04.657	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=8.61
+2	00:06:04.778	XAU_Pro_EA XAUUSD,M5: close #1561193627 sell 0.01 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.44
+0	00:06:04.778	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193627
+0	00:06:04.950	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=2.20
+2	00:06:05.056	XAU_Pro_EA XAUUSD,M5: close #1561193632 sell 0.01 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.47
+0	00:06:05.056	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193632
+0	00:06:05.258	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=2.17
+2	00:06:05.366	XAU_Pro_EA XAUUSD,M5: close #1561193638 sell 0.01 XAUUSD at 4825.64 sl: 4825.44 tp: 4802.75 at price 4823.31
+0	00:06:05.366	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561193638
+0	00:06:05.872	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=2.33
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: ===== SIGNAL CHECK =====
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Strategy       : SNIPER
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Direction      : SELL
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Regime         : UNKNOWN
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Trend OK       : YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Higher Bias OK : YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Pullback OK    : YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Rejection OK   : YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Confirmation OK: YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Extra Filter OK: YES
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: ATR            : 10.34
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Spread         : 15
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: EMA Fast       : 4874.72
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: EMA Slow       : 4949.20
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: H4 EMA Fast    : 0.00
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: H4 EMA Slow    : 0.00
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: SL Price       : 4837.13
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: TP Price       : 4807.55
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: Result         : SELL signal
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: ========================
+0	00:10:01.296	XAU_Pro_EA XAUUSD,M5: [INFO] Sending SELL | Attempt=1 Lot=1.00 Entry=4827.27 SL=4837.13 TP=4807.55
+2	00:10:01.417	XAU_Pro_EA XAUUSD,M5: open #1561194845 sell 1.00 XAUUSD at 4827.27 sl: 4837.13 tp: 4807.55 ok
+0	00:10:01.417	XAU_Pro_EA XAUUSD,M5: [TRADE] Order opened ticket: 1561194845
+0	00:10:01.417	XAU_Pro_EA XAUUSD,M5: [TRADE] Trade executed: SniperSell
+2	00:10:13.233	XAU_Pro_EA XAUUSD,M5: modify #1561194845 sell 1.00 XAUUSD at 4827.27 sl: 4837.05 tp: 4807.55 ok
+2	00:10:48.021	XAU_Pro_EA XAUUSD,M5: modify #1561194845 sell 1.00 XAUUSD at 4827.27 sl: 4837.03 tp: 4807.55 ok
+2	00:10:48.422	XAU_Pro_EA XAUUSD,M5: modify #1561194845 sell 1.00 XAUUSD at 4827.27 sl: 4837.01 tp: 4807.55 ok
+2	00:10:48.718	XAU_Pro_EA XAUUSD,M5: modify #1561194845 sell 1.00 XAUUSD at 4827.27 sl: 4837.00 tp: 4807.55 ok
+2	00:10:49.361	XAU_Pro_EA XAUUSD,M5: close #1561194845 sell 0.50 XAUUSD at 4827.27 sl: 4837.00 tp: 4807.55 at price 4823.67
+0	00:10:49.361	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561194845
+2	00:10:49.448	XAU_Pro_EA XAUUSD,M5: modify #1561195033 sell 0.50 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 ok
+0	00:10:49.540	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=180.00
+2	00:10:49.646	XAU_Pro_EA XAUUSD,M5: close #1561195033 sell 0.25 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.02
+0	00:10:49.646	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195033
+0	00:10:49.739	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=81.25
+2	00:10:49.855	XAU_Pro_EA XAUUSD,M5: close #1561195037 sell 0.12 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.86
+0	00:10:49.855	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195037
+0	00:10:50.035	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=28.92
+2	00:10:50.140	XAU_Pro_EA XAUUSD,M5: close #1561195041 sell 0.06 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.85
+0	00:10:50.140	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195041
+0	00:10:50.147	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=14.52
+2	00:10:50.248	XAU_Pro_EA XAUUSD,M5: close #1561195046 sell 0.03 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.34
+0	00:10:50.248	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195046
+0	00:10:50.823	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=8.79
+2	00:10:50.944	XAU_Pro_EA XAUUSD,M5: close #1561195049 sell 0.02 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.31
+0	00:10:50.944	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195049
+0	00:10:51.122	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=5.92
+2	00:10:51.227	XAU_Pro_EA XAUUSD,M5: close #1561195053 sell 0.01 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.30
+0	00:10:51.227	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195053
+0	00:10:51.771	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=2.97
+2	00:10:51.876	XAU_Pro_EA XAUUSD,M5: close #1561195055 sell 0.01 XAUUSD at 4827.27 sl: 4827.07 tp: 4807.55 at price 4824.24
+0	00:10:51.876	XAU_Pro_EA XAUUSD,M5: [TRADE] Partial close executed on SELL ticket: 1561195055
+0	00:10:52.280	XAU_Pro_EA XAUUSD,M5: [INFO] Trade closed WIN | Profit=3.03
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: ===== SIGNAL CHECK =====
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Strategy       : SNIPER
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Direction      : SELL
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Regime         : UNKNOWN
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Trend OK       : YES
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Higher Bias OK : YES
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Pullback OK    : YES
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Rejection OK   : NO
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Confirmation OK: YES
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Extra Filter OK: NO
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: ATR            : 10.58
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Spread         : 15
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: EMA Fast       : 4871.52
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: EMA Slow       : 4947.40
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: H4 EMA Fast    : 0.00
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: H4 EMA Slow    : 0.00
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: SL Price       : 0.00
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: TP Price       : 0.00
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: Result         : Sniper sell conditions not met
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: ========================
+0	00:15:01.122	XAU_Pro_EA XAUUSD,M5: [SKIP] Sniper sell conditions not met
+0	00:15:11.971	XAU_Pro_EA XAUUSD,M5: uninit reason 9
+0	00:15:12.013	Expert XAU_Pro_EA XAUUSD,M5: removed
+0	17:57:57.066	Expert XAU_Pro_EA XAUUSD,M5: loaded successfully
+0	17:57:57.067	XAU_Pro_EA XAUUSD,M5 inputs: MagicNumber=2026031702; Slippage=10; MaxSpreadPoints=220; StrategyMode=2; TrendTimeframe=60; HigherBiasTimeframe=240; FastEMA=50; SlowEMA=200; PullbackEMA1=20; PullbackEMA2=50; SniperBiasTimeframe=15; SniperFastEMA=34; SniperSlowEMA=144; SniperPullbackEMA=20; SniperUseSecondEMA=true; SniperPullbackEMA2=50; UseSniperATRProfile=true; SniperATRStopMultiplier=0.45; SniperATRTakeProfitMultiplier=0.9; ATRPeriod=14; MinATR=1.2; MaxATR=1000.0; UseATRStops=true; ATRStopMultiplier=0.75; ATRTakeProfitMultiplier=1.5; UseRegimeFilter=false; RegimeMinATR=2.0; RegimeMaxATR=35.0; RegimeMinEMASeparationPoints=40.0; RegimeChaoticCandleATRRatio=3.0; UseMultiTimeframeBias=true; UseSessionPreset=false; SessionPreset=3; StartHour=0; EndHour=24; UseRiskPercent=true; RiskPercent=1.0; FixedLotSize=0.01; RiskUseEquity=true; MaxCalculatedLot=1.0; MinStopDistancePoints=250; StopLossPoints=300; TakeProfitPoints=600; UseBreakEven=true; BreakEvenTriggerPoints=180; BreakEvenLockPoints=20; UsePartialClose=true; PartialClosePercent=50.0; 

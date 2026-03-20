@@ -1,7 +1,34 @@
 ; ============================================================
-; XAU Sniper — Personal Use Money Preset
+; XAU Sniper — Corrected Test Preset
 ; Account: 100k Demo
-; Goal: personal use, profit-focused, disciplined but not overfiltered
+; Last updated: 2026-03-19
+;
+; Changes from original preset:
+;   [1] SniperATRStopMultiplier: 0.65 -> 1.20
+;       Stop was inside M5 XAUUSD wick noise. At 1.20x ATR
+;       the stop has room to breathe without killing R:R.
+;   [2] ATRTrailingMultiplier: 2.20 -> 1.30
+;       Was identical to TP — trail never activated in practice.
+;       Now trails meaningfully once trade is in profit.
+;   [3] SniperBiasTimeframe: 15 -> 60 (H1)
+;       M15 34/144 EMA flips too frequently for M5 entries.
+;       H1 reflects session-level trend — aggressive entry,
+;       stable directional brain.
+;   [4] ActiveSessionStartHour: 0 -> 7 (GMT)
+;       Was trading 24hrs including Asian noise.
+;   [5] ActiveSessionEndHour: 24 -> 20 (GMT)
+;       Cuts late NY session where M5 XAUUSD volume drops.
+;   [6] CooldownBarsAfterLoss: 2 -> 6
+;       10 min cooldown was too short. 30 min gives structure
+;       time to show whether loss was a wick or a reversal.
+;   [7] BreakEvenTriggerPoints: 500 -> 220
+;       At old stop size, 500pts = 3-5R away — never triggered.
+;       220pts is ~1R at the corrected stop size.
+;   [8] BreakEvenLockPoints: 120 -> 80
+;       Scaled down to match corrected stop/TP distances.
+;   [9] MaxTradesPerDay: 8 -> 4
+;       Corrected engine produces 2-4 quality signals per
+;       session. 8 was chasing marginal setups.
 ; ============================================================
 
 MagicNumber=2026031702
@@ -18,6 +45,7 @@ PullbackEMA1=20
 PullbackEMA2=50
 
 ; --- Sniper engine ---
+; [3] H1 bias: stable session-level trend for M5 aggressive entries
 SniperBiasTimeframe=60
 SniperFastEMA=34
 SniperSlowEMA=144
@@ -27,13 +55,14 @@ SniperPullbackEMA2=50
 
 ; --- ATR profile ---
 UseSniperATRProfile=true
+; [1] Stop widened from 0.65 to 1.20 — was inside wick noise
 SniperATRStopMultiplier=1.20
 SniperATRTakeProfitMultiplier=2.20
 ATRPeriod=14
 MinATR=1.2
 MaxATR=1000.0
 
-; --- Standard ATR stops (fallback) ---
+; --- Standard ATR stops (non-sniper mode fallback) ---
 UseATRStops=true
 ATRStopMultiplier=0.80
 ATRTakeProfitMultiplier=2.20
@@ -49,14 +78,13 @@ RegimeChaoticCandleATRRatio=3.0
 UseMultiTimeframeBias=true
 
 ; --- Session filter ---
-; Personal-use version: wider than premium/sales version
-; Lets bot work across most useful hours without 24/5 noise
+; [4][5] Active hours 07:00-20:00 GMT covers London open through NY close
 UseSessionPreset=false
 SessionPreset=3
-StartHour=6
+StartHour=7
 EndHour=20
-ActiveSessionStartHour=0
-ActiveSessionEndHour=24
+ActiveSessionStartHour=7
+ActiveSessionEndHour=20
 
 ; --- Risk management ---
 UseRiskPercent=true
@@ -71,26 +99,25 @@ StopLossPoints=300
 TakeProfitPoints=600
 
 ; --- Break-even ---
-; Slightly less eager than your current preset
+; [7][8] Scaled to ~1R at corrected stop size
 UseBreakEven=true
-BreakEvenTriggerPoints=260
-BreakEvenLockPoints=60
+BreakEvenTriggerPoints=220
+BreakEvenLockPoints=80
 
 ; --- Partial close ---
-UsePartialClose=true
+UsePartialClose=false
 PartialClosePercent=50.0
-PartialCloseTriggerPoints=250
+PartialCloseTriggerPoints=180
 
 ; --- Trailing stop ---
-; Wider than 1.30 so winners can breathe, still active enough
+; [2] Tightened from 2.20 to 1.30 so trail activates before TP
 UseATRTrailing=true
-ATRTrailingMultiplier=1.60
-TrailActivationPoints=280
+ATRTrailingMultiplier=1.30
 
 ; --- Daily guards ---
 UseDailyGuard=true
-; Personal-use version: enough room for active days
-MaxTradesPerDay=6
+; [9] Reduced from 8 — corrected engine yields 2-4 quality signals/session
+MaxTradesPerDay=4
 MaxConsecutiveLosses=5
 UseMaxDailyLossPercent=true
 MaxDailyLossPercent=2.0
@@ -108,7 +135,7 @@ MinEMASeparationPoints=30.0
 EnableDebugLogs=true
 EnableVerboseSignalLogs=true
 
-; --- Developer mode (all OFF) ---
+; --- Developer mode (all OFF — real account safety) ---
 DeveloperTestMode=false
 DeveloperIgnoreConfirmation=false
 DeveloperIgnoreExtraFilter=false
@@ -126,6 +153,7 @@ SpreadSpikeMultiplier=3.0
 ; --- Trade cooldown ---
 UseTradeCooldown=true
 CooldownBarsAfterTrade=2
+; [6] Increased from 2 — 30 min cooldown after a loss
 CooldownBarsAfterLoss=6
 
 ; --- Display ---
@@ -136,4 +164,4 @@ StatusPanelY=20
 
 ; --- CSV logging ---
 EnableCSVLogging=true
-CSVFileName=XAU_Sniper_Personal_Log.csv
+CSVFileName=XAU_Sniper_Test_Log.csv

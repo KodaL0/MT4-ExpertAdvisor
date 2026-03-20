@@ -50,6 +50,11 @@ void LogSignalDiagnostics(SignalResult &r)
    Print("EMA Slow       : ", DoubleToString(r.emaSlow, 2));
    Print("H4 EMA Fast    : ", DoubleToString(r.h4Fast, 2));
    Print("H4 EMA Slow    : ", DoubleToString(r.h4Slow, 2));
+   Print("Setup Score    : ", IntegerToString(r.setupScore));
+   Print("HTF Structure OK: ", BoolText(r.htfStructureOk));
+   Print("HTF Swing High : ", DoubleToString(r.htfSwingHigh, Digits));
+   Print("HTF Swing Low  : ", DoubleToString(r.htfSwingLow, Digits));
+   Print("HTF Bias Score : ", IntegerToString(r.htfBiasScore));
    Print("SL Price       : ", DoubleToString(r.stopLossPrice, Digits));
    Print("TP Price       : ", DoubleToString(r.takeProfitPrice, Digits));
    Print("Result         : ", r.reason);

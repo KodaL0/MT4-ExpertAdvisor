@@ -34,6 +34,12 @@ input double SniperATRStopMultiplier = 0.60;
 input double SniperATRTakeProfitMultiplier = 1.20;
 
 // ===============================
+// Sniper Score Thresholds
+// ===============================
+input int SniperPullbackScoreMin = 4;
+input int SniperBreakoutScoreMin = 5;
+
+// ===============================
 // Volatility / ATR
 // ===============================
 input int ATRPeriod = 14;
@@ -62,9 +68,11 @@ input bool UseMultiTimeframeBias = true;
 // Sessions
 // ===============================
 input bool UseSessionPreset = true;
-input int SessionPreset = 3; // 1=London, 2=NewYork, 3=London+NY, 4=Custom
+input int SessionPreset = 3;
 input int StartHour = 0;
 input int EndHour = 24;
+input int ActiveSessionStartHour = 7;  // overridden by preset
+input int ActiveSessionEndHour   = 20; // overridden by preset
 
 // ===============================
 // Risk
@@ -97,6 +105,7 @@ input int PartialCloseTriggerPoints = 300;
 
 input bool UseATRTrailing = true;
 input double ATRTrailingMultiplier = 1.5;
+input int TrailActivationPoints = 280;
 
 // ===============================
 // Daily Guard
@@ -123,6 +132,14 @@ input double MinEMASeparationPoints = 120.0;
 // ===============================
 input bool EnableDebugLogs = true;
 input bool EnableVerboseSignalLogs = true;
+
+// ===============================
+// HTF Structure Filter
+// ===============================
+input bool   UseHTFStructureFilter = true;
+input int    HTFStructureTimeframe  = 60;   // 60=H1, 240=H4
+input int    HTFSwingLookback       = 40;
+input double HTFStructureBufferATR  = 0.30;
 
 // ===============================
 // Developer Mode
