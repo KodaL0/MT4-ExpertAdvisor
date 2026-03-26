@@ -1,0 +1,495 @@
+0	09:58:38.506	Compiling 'MACD Sample'
+0	09:58:38.506	Compiling 'Moving Average'
+0	09:58:38.506	Compiling 'XAUUSD_ProBot_Bot'
+0	09:58:39.784	Compiling 'Accelerator'
+0	09:58:39.784	Compiling 'Accumulation'
+0	09:58:39.784	Compiling 'Alligator'
+0	09:58:39.800	Compiling 'ATR'
+0	09:58:39.800	Compiling 'Awesome'
+0	09:58:39.800	Compiling 'Bands'
+0	09:58:39.800	Compiling 'Bears'
+0	09:58:39.800	Compiling 'Bulls'
+0	09:58:39.800	Compiling 'CCI'
+0	09:58:39.800	Compiling 'Custom Moving Averages'
+0	09:58:39.800	Compiling 'Heiken Ashi'
+0	09:58:39.800	Compiling 'Ichimoku'
+0	09:58:39.800	Compiling 'iExposure'
+0	09:58:39.800	Compiling 'MACD'
+0	09:58:39.800	Compiling 'Momentum'
+0	09:58:39.800	Compiling 'OsMA'
+0	09:58:39.800	Compiling 'Parabolic'
+0	09:58:39.800	Compiling 'RSI'
+0	09:58:39.800	Compiling 'Stochastic'
+0	09:58:39.800	Compiling 'ZigZag'
+0	09:58:39.800	Compiling 'SimplePanel'
+0	09:58:42.950	Compiling 'PeriodConverter'
+0	09:58:42.950	Compiling 'DLLSampleTester'
+0	09:58:42.950	Compiling 'PipeClient'
+0	09:58:42.950	Compiling 'PipeClientPure'
+0	09:58:43.684	Compiling 'stdlib'
+0	09:58:45.059	Expert XAU_Pro_EA XAUUSDcheck,M5: loaded successfully
+0	09:58:45.059	XAU_Pro_EA XAUUSDcheck,M5 inputs: MagicNumber=2026031702; Slippage=10; MaxSpreadPoints=180; StrategyMode=2; TrendTimeframe=60; HigherBiasTimeframe=240; FastEMA=50; SlowEMA=200; PullbackEMA1=20; PullbackEMA2=50; SniperBiasTimeframe=60; SniperFastEMA=34; SniperSlowEMA=144; SniperPullbackEMA=20; SniperUseSecondEMA=true; SniperPullbackEMA2=50; UseSniperATRProfile=true; SniperATRStopMultiplier=1.2; SniperATRTakeProfitMultiplier=2.2; SniperPullbackScoreMin=4; SniperBreakoutScoreMin=5; ATRPeriod=14; MinATR=1.2; MaxATR=1000.0; UseATRStops=true; ATRStopMultiplier=0.8; ATRTakeProfitMultiplier=2.2; UseRegimeFilter=false; RegimeMinATR=2.0; RegimeMaxATR=35.0; RegimeMinEMASeparationPoints=40.0; RegimeChaoticCandleATRRatio=3.0; UseMultiTimeframeBias=true; UseSessionPreset=false; SessionPreset=3; StartHour=0; EndHour=24; ActiveSessionStartHour=0; ActiveSessionEndHour=24; UseRiskPercent=true; RiskPercent=1.0; FixedLotSize=0.01; RiskUseEquity=true; MaxCalculatedLot=1.0; MinStopDistancePoints=250; StopLossPoints=300; TakeProfitPoints=600; UseBreakEven=true; 
+0	09:58:47.019	XAU_Pro_EA XAUUSDcheck,M5: [INFO] XAU Pro EA initialized | Strategy=SNIPER
+0	09:58:47.019	XAU_Pro_EA XAUUSDcheck,M5: [INFO] History tracking initialized at total: 143
+0	09:58:47.020	XAU_Pro_EA XAUUSDcheck,M5: initialized
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 36.32
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 7
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 4247.53
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 4124.05
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: Result         : SELL signal
+0	10:00:08.978	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:00:08.990	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell | Lot=0.24 Entry=4203.95 SL=4247.53 TP=4124.05
+2	10:00:09.116	XAU_Pro_EA XAUUSDcheck,M5: open #1562725938 sell 0.24 XAUUSDcheck at 4203.95 sl: 4247.53 tp: 4124.05 ok
+0	10:00:09.116	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Order opened ticket: 1562725938 | SniperSell
+0	10:00:09.116	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Trade executed: SniperSell
+0	10:05:08.791	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 1
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : NO
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 36.35
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 4
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:10:08.721	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:13:17.683	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Trade closed LOSS | Profit=-1045.92
+0	10:15:08.394	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 3
+0	10:20:08.713	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 2
+0	10:25:08.552	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 1
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : NO
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 31.28
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 4
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:30:08.670	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : NO
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 30.82
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 4
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:35:08.754	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:35:08.759	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 31.51
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:40:08.510	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 30.49
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:45:08.222	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:45:08.232	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : YES
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: NO
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 29.11
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 6
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:50:08.367	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 27.18
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 3
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4510.06
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4793.79
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 9
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 4271.76
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 4146.43
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: Result         : SELL signal
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	10:55:08.318	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell_TP | Lot=0.11 Entry=4227.53 SL=4271.76 TP=4146.43
+0	10:55:08.475	XAU_Pro_EA XAUUSDcheck,M5: [ERROR] OrderSend failed | Attempt=1 | Label=SniperSell_TP | Code=138 | Reason=Requote | Code=0
+0	10:55:09.035	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=2 Label=SniperSell_TP | Lot=0.11 Entry=4226.70 SL=4271.76 TP=4146.43
+0	10:55:09.147	XAU_Pro_EA XAUUSDcheck,M5: [ERROR] OrderSend failed | Attempt=2 | Label=SniperSell_TP | Code=138 | Reason=Requote | Code=0
+0	10:55:09.147	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell_RUN | Lot=0.11 Entry=4226.70 SL=4271.76 TP=0.00
+2	10:55:09.275	XAU_Pro_EA XAUUSDcheck,M5: open #1562755005 sell 0.11 XAUUSDcheck at 4226.70 sl: 4271.76 ok
+0	10:55:09.275	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Order opened ticket: 1562755005 | SniperSell_RUN
+0	10:55:09.275	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Trade executed: SniperSell
+2	10:56:08.826	XAU_Pro_EA XAUUSDcheck,M5: modify #1562755005 sell 0.11 XAUUSDcheck at 4226.70 sl: 4226.10 tp: 0.00 ok
+0	10:57:00.824	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Trade closed WIN | Profit=6.60
+0	11:00:08.584	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 1
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : NO
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 26.29
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 4
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:05:08.288	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 25.48
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:10:08.412	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 24.87
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:15:08.910	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 24.88
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:20:08.453	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 24.04
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:25:08.248	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: NO
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: YES
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 22.20
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 17
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 5
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 0.00
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 0.00
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: Result         : Sniper sell conditions not met
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:30:08.203	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Sniper sell conditions not met
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : NO
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: YES
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: NO
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 22.94
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 18
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 6
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 4310.11
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 4228.93
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: Result         : SELL signal
+0	11:35:08.571	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:35:08.579	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell | Lot=0.36 Entry=4281.46 SL=4310.11 TP=4228.93
+0	11:35:08.683	XAU_Pro_EA XAUUSDcheck,M5: [ERROR] OrderSend failed | Attempt=1 | Label=SniperSell | Code=138 | Reason=Requote | Code=0
+0	11:35:09.229	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=2 Label=SniperSell | Lot=0.36 Entry=4281.42 SL=4310.11 TP=4228.93
+2	11:35:09.341	XAU_Pro_EA XAUUSDcheck,M5: open #1562775606 sell 0.36 XAUUSDcheck at 4281.42 sl: 4310.11 tp: 4228.93 ok
+0	11:35:09.341	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Order opened ticket: 1562775606 | SniperSell
+0	11:35:09.341	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Trade executed: SniperSell
+2	11:35:35.979	XAU_Pro_EA XAUUSDcheck,M5: close #1562775606 sell 0.18 XAUUSDcheck at 4281.42 sl: 4310.11 tp: 4228.93 at price 4278.87
+0	11:35:35.979	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Partial close executed on SELL ticket: 1562775606
+0	11:35:36.269	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Trade closed WIN | Profit=45.90
+2	11:35:41.045	XAU_Pro_EA XAUUSDcheck,M5: modify #1562775845 sell 0.18 XAUUSDcheck at 4281.42 sl: 4280.82 tp: 4228.93 ok
+0	11:35:45.570	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Trade closed WIN | Profit=10.80
+0	11:40:08.948	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 1
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: ===== SIGNAL CHECK =====
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Strategy       : SNIPER
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Direction      : SELL
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Regime         : UNKNOWN
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Trend OK       : YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Higher Bias OK : YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Pullback OK    : YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Rejection OK   : YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Confirmation OK: YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Extra Filter OK: NO
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: ATR            : 23.36
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Spread         : 3
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: EMA Fast       : 4495.27
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: EMA Slow       : 4786.30
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Fast    : 4780.34
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: H4 EMA Slow    : 4987.17
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Setup Score    : 8
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: HTF Structure OK: YES
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing High : 0.00
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: HTF Swing Low  : 0.00
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: HTF Bias Score : 1051156492
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: SL Price       : 4286.65
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: TP Price       : 4110.16
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: Result         : SELL signal
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: ========================
+0	11:45:08.737	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell_TP | Lot=0.08 Entry=4224.36 SL=4286.65 TP=4110.16
+0	11:45:08.841	XAU_Pro_EA XAUUSDcheck,M5: [ERROR] OrderSend failed | Attempt=1 | Label=SniperSell_TP | Code=138 | Reason=Requote | Code=0
+0	11:45:09.399	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=2 Label=SniperSell_TP | Lot=0.08 Entry=4223.74 SL=4286.65 TP=4110.16
+2	11:45:09.542	XAU_Pro_EA XAUUSDcheck,M5: open #1562781802 sell 0.08 XAUUSDcheck at 4223.74 sl: 4286.65 tp: 4110.16 ok
+0	11:45:09.542	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Order opened ticket: 1562781802 | SniperSell_TP
+0	11:45:09.542	XAU_Pro_EA XAUUSDcheck,M5: [INFO] Sending SELL | Attempt=1 Label=SniperSell_RUN | Lot=0.08 Entry=4223.94 SL=4286.65 TP=0.00
+2	11:45:09.654	XAU_Pro_EA XAUUSDcheck,M5: open #1562781805 sell 0.08 XAUUSDcheck at 4223.94 sl: 4286.65 ok
+0	11:45:09.654	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Order opened ticket: 1562781805 | SniperSell_RUN
+0	11:45:09.654	XAU_Pro_EA XAUUSDcheck,M5: [TRADE] Trade executed: SniperSell
+0	11:50:08.256	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Cooldown active | Bars remaining: 1
+0	11:55:08.254	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:00:08.907	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:05:09.049	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:10:08.754	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:15:07.457	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:20:07.166	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached
+0	12:25:07.375	XAU_Pro_EA XAUUSDcheck,M5: [SKIP] Max open positions reached

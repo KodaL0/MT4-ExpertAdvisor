@@ -95,23 +95,36 @@ input int TakeProfitPoints = 600;
 // ===============================
 // Trade Management
 // ===============================
+input bool UseTieredExit = true;
+
 input bool UseBreakEven = true;
 input int BreakEvenTriggerPoints = 300;
-input int BreakEvenLockPoints = 50;
+input int BreakEvenLockPoints = 200;
 
 input bool UsePartialClose = true;
 input double PartialClosePercent = 50.0;
 input int PartialCloseTriggerPoints = 300;
 
+input int PartialClose1TriggerPoints = 600;
+input double Tier1Percent = 30.0;
+
+input int PartialClose2TriggerPoints = 1200;
+input double Tier2Percent = 30.0;
+input int Tier2LockPoints = 500;
+
 input bool UseATRTrailing = true;
-input double ATRTrailingMultiplier = 1.5;
-input int TrailActivationPoints = 280;
+input double ATRTrailingMultiplier = 1.20;
+
+input bool UseTrailActivation = true;
+input int TrailActivationPoints = 600;
+
+input double Tier3TrailMultiplier = 0.80;
 
 // ===============================
 // Daily Guard
 // ===============================
 input bool UseDailyGuard = true;
-input int MaxTradesPerDay = 5;
+input int MaxTradesPerDay = 10;
 input int MaxConsecutiveLosses = 3;
 input bool UseMaxDailyLossPercent = true;
 input double MaxDailyLossPercent = 2.0;
